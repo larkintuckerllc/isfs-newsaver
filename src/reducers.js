@@ -5,6 +5,7 @@ import channel from './ducks/channel';
 import connected from './ducks/connected';
 import tile from './ducks/tile';
 import waypoint from './ducks/waypoint';
+import blocked from './ducks/blocked';
 
 export default combineReducers({
   form: formReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   connected,
   tile,
   waypoint,
+  blocked,
 });

@@ -2,6 +2,7 @@
 
 :global(html), :global(body) {
   height: 100%;
+  background-color: black;
 }
 :global(.btn:focus), :global(.btn:active), :global(button:focus), :global(button:active) {
   outline: none !important;
