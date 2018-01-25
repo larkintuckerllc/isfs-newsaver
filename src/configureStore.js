@@ -1,7 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { routerMiddleware } from 'react-router-redux';
-import { hashHistory } from 'react-router';
 import thr0wMiddleware from './util/thr0wMiddleware';
 import reducers from './reducers';
 import { SET_TILE } from './ducks/tile';
@@ -11,8 +9,7 @@ import { getChannels } from './util/parameters';
 export default () => {
   const middlewares = [
     thunk,
-    thr0wMiddleware(['@@router/LOCATION_CHANGE', SET_TILE, SET_WAYPOINT], getChannels()),
-    routerMiddleware(hashHistory),
+    thr0wMiddleware([SET_TILE, SET_WAYPOINT], getChannels()),
   ];
   return createStore(
     reducers,

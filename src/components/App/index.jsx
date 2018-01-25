@@ -6,13 +6,18 @@ import { getConnected } from '../../ducks/connected';
 import Authentication from './Authentication';
 import Channel from './Channel';
 import Connect from './Connect';
-import Routes from './Routes';
+import Frame from './Frame';
+import Saver from '../Saver';
 
 const App = ({ authenticated, channel, connected }) => {
   if (!authenticated) return <Authentication />;
   if (channel === null) return <Channel />;
   if (!connected) return <Connect />;
-  return <Routes />;
+  return (
+    <Frame>
+      <Saver />
+    </Frame>
+  );
 };
 App.propTypes = {
   authenticated: PropTypes.bool.isRequired,
