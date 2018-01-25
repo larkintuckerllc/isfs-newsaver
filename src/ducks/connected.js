@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 import * as fromThr0w from '../api/thr0w';
+import { setBlocked } from './blocked';
+import { setWaypoint } from './waypoint';
 import { getChannel } from './channel';
 import { Thr0wException } from '../util/exceptions';
 import { ACTION_PREFIX } from '../config';
@@ -63,6 +65,9 @@ export const connect = () => (dispatch, getState) => {
         type: SET_CONNECTED_SUCCESS,
         value: true,
       });
+      dispatch(setBlocked(true));
+      dispatch(setWaypoint(0));
+      dispatch(setBlocked(false));
     },
     error => {
       dispatch({
