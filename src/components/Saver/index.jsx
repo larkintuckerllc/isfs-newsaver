@@ -15,6 +15,7 @@ import {
 } from '../../util/grid';
 import styles from './index.scss';
 
+const MENU_URL = 'http://s3.amazonaws.com/isfs-web/cover.html';
 class Saver extends Component {
   constructor() {
     super();
@@ -81,6 +82,7 @@ class Saver extends Component {
     this.frameContentEl.removeEventListener('touchstart', this.handleTouchStart);
   }
   handleTouchStart() {
+    window.open(MENU_URL, '_self');
   }
   animate() {
     const { setWaypoint, waypoint } = this.props;
