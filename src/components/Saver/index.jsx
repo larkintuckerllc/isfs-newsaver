@@ -6,7 +6,7 @@ import { getMasterChannel } from '../../util/parameters';
 import { getChannel } from '../../ducks/channel';
 import * as fromWaypoint from '../../ducks/waypoint';
 import * as fromTile from '../../ducks/tile';
-import { SAVER_CHECK, SAVER_DELAY,
+import { MENU_URL, SAVER_CHECK, SAVER_DELAY,
   SAVER_DURATION, SAVER_WAYPOINTS, SAVER_ZOOM, SAVER_START, SAVER_END, TILES } from '../../config';
 import {
   frameXYToContentXY,
@@ -15,7 +15,6 @@ import {
 } from '../../util/grid';
 import styles from './index.scss';
 
-const MENU_URL = 'http://s3.amazonaws.com/isfs-web/cover.html';
 class Saver extends Component {
   constructor() {
     super();
